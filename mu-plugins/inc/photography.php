@@ -1,22 +1,22 @@
 <?php
  /*
-  * Code Post Type
-  * These are projects posted in the Code Section
+  * Photography Post Type
+  * These are styles posted in the Photography Section
   */
 
 
-  add_action('init', 'create_code_project_post_type');
-  function create_code_project_post_type() {
+  add_action('init', 'create_photography_style_post_type');
+  function create_photography_style_post_type() {
     $labels = array(
-	      'name'               => __( 'Code' ),
-	      'singular_name'      => __( 'Code Project' ),
+	      'name'               => __( 'Photography' ),
+	      'singular_name'      => __( 'Photography Style' ),
 	      'add_new'            => __( 'Add New' ),
-	      'add_new_project'       => __( 'Add New Code Project' ),
-	      'edit'               => __( 'Edit Code Project' ),
-	      'new_project'           => __( 'New Code Project' ),
-	      'search_projects'       => __( 'Search Code Projects' ),
-	      'not_found'          => __( 'No code projects found' ),
-	      'not_found_in_trash' => __( 'No code projects were found in the trash' ),
+	      'add_new_style'       => __( 'Add New Photography Style' ),
+	      'edit'               => __( 'Edit Photography Style' ),
+	      'new_style'           => __( 'New Photography Style' ),
+	      'search_styles'       => __( 'Search Photography Styles' ),
+	      'not_found'          => __( 'No photography styles found' ),
+	      'not_found_in_trash' => __( 'No photography styles were found in the trash' ),
     );
 
     $args = array(
@@ -24,10 +24,10 @@
     	  'supports' => array('title', 'editor', 'thumbnail'),
         'public'   => true,
         'rewrite'  => false,
-        'taxonomies' => array('code_taxonomy')
+        'taxonomies' => array('photography_taxonomy')
     );
 
-    register_post_type('code', $args);
+    register_post_type('photography', $args);
     flush_rewrite_rules();
   }
 
@@ -36,57 +36,43 @@
   // Add Meta Boxes
   // -------------------------------------------------------------
 
-  $code_project_metabox = array(
-    'id'       => 'code_project_metabox',
+  $photography_style_metabox = array(
+    'id'       => 'photography_style_metabox',
     'title'    => 'Meta Fields',
-    'page'     => 'code',
+    'page'     => 'photography',
     'context'  => 'normal',
     'priority' => 'default',
     'fields'   => array(
       array(
-        'name' => 'Type of Project',
+        'name' => 'Type of Style',
         'desc' => '',
-        'id'   => 'code_project_type_of_project',
+        'id'   => 'photography_style_type_of_style',
         'type' => 'text',
         'std'  => ''
       ),
-      array(
-        'name' => 'Video ID (YouTube)',
-        'desc' => '',
-        'id'   => 'code_project_video_url',
-        'type' => 'text',
-        'std'  => ''
-      ),
-      array(
-        'name' => 'Featured (yes/no)',
-        'desc' => '',
-        'id'   => 'code_project_front_page',
-        'type' => 'text',
-        'std'  => ''
-      )
     )
   );
 
   // Display Meta Box
-  add_action( 'admin_menu', 'code_project_add_box' );
-  function code_project_add_box() {
-    global $code_project_metabox;
+  add_action( 'admin_menu', 'photography_style_add_box' );
+  function photography_style_add_box() {
+    global $photography_style_metabox;
     add_meta_box(
-      $code_project_metabox['id'],
-      $code_project_metabox['title'],
-      'code_project_show_box',
-      $code_project_metabox['page'],
-      $code_project_metabox['context'],
-      $code_project_metabox['priority']
+      $photography_style_metabox['id'],
+      $photography_style_metabox['title'],
+      'photography_style_show_box',
+      $photography_style_metabox['page'],
+      $photography_style_metabox['context'],
+      $photography_style_metabox['priority']
     );
   }
 
-  function code_project_show_box()
+  function photography_style_show_box()
   {
-    global $code_project_metabox, $post;
+    global $photography_style_metabox, $post;
     //echo '<input type="hidden" name="product_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
     echo '<table class="form-table">';
-    foreach ($code_project_metabox['fields'] as $field) {
+    foreach ($photography_style_metabox['fields'] as $field) {
       // get current post meta data
       $meta = get_post_meta($post->ID, $field['id'], true);
 
@@ -120,16 +106,16 @@
   // -------------------------------------------------------------
   // Setters
   // -------------------------------------------------------------
-  add_action( 'save_post', 'update_code_project_metadata' );
-  function update_code_project_metadata() {
+  add_action( 'save_post', 'update_photography_style_metadata' );
+  function update_photography_style_metadata() {
     global $post_id;
-    global $code_project_metabox;
+    global $photography_style_metabox;
 
     if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
       return $post_id;
     }
 
-    foreach($code_project_metabox['fields'] as $field) {
+    foreach($photography_style_metabox['fields'] as $field) {
        //echo $_POST[$field['id']];
         update_post_meta($post_id, $field['id'], $_POST[$field['id']]);
     }

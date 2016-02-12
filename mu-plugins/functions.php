@@ -6,6 +6,7 @@
   *
   */
 
-  require_once('inc/code.php');
+  	require_once('inc/code.php');
+	require_once('inc/photography.php');
 
 ?>

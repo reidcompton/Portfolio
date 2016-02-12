@@ -13,20 +13,26 @@
 	// 	the_content();
 	// endwhile; endif;
 	<div class="section" id="welcome">
-		<h2 class="tagline">hand crafted digital</h2>
-		<a href="#" id="meet-reid">Who's Reid?</a>
-		<div class="extended-tag">
-			<p>Lorem ipsum dolor sit amet consectetur adispicing elit.</p>
+
+		<img id="intro-video" src="<?php echo bloginfo('stylesheet_directory');?>/img/train.jpg">
+		<div class="video-overlay"></div>
+		<div style="position:relative;">
+			<h2 class="tagline">hand&ndash;crafted digital</h2>
+			<a href="#" id="meet-reid">Who's Reid?</a>
 		</div>
+			<div class="extended-tag">
+				<p>Full-stack .NET development, Photography</p>
+			</div>
 	</div>
 	<div class="section">
 		<div id="code">
 			<div class="descriptor">
 				<div class="info">
-				<div class="info-text">
-						<h2>CODE</h2>
-						<hr class="underline">
-						<p>In accumsan fringilla cursus. Donec consequat pretium sem bibendum iaculis. </p>
+					<div class="info-text"> 
+						<img src="<?php echo bloginfo('stylesheet_directory');?>/img/brackets.png" class="sample-image">
+						<h2>development</h2>
+						<!-- <hr class="underline"> -->
+						<!-- <p>In accumsan fringilla cursus. Donec consequat pretium sem bibendum iaculis. </p> -->
 						<a href="code" class="samples">Samples</a>
 					</div>
 				</div>
@@ -36,9 +42,10 @@
 			<div class="descriptor">
 				<div class="info">
 					<div class="info-text">
-						<h2>PHOTOGRAPHY</h2>
-						<hr class="underline">
-						<p>In accumsan fringilla cursus. Donec consequat pretium sem bibendum iaculis. </p>
+						<img src="<?php echo bloginfo('stylesheet_directory');?>/img/aperture.png" class="sample-image">
+						<h2>photography</h2>
+						<!-- <hr class="underline"> -->
+						<!-- <p>In accumsan fringilla cursus. Donec consequat pretium sem bibendum iaculis. </p> -->
 						<a href="#" class="samples">Samples</a>
 					</div>
 				</div>

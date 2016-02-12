@@ -13,7 +13,8 @@
 
 	
 
-	<footer id="colophon" class="site-footer section fp-auto-height" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div id="showPlus"><a href="#"><span>+</span><span class="hide">-</span></a></div>
 		<div class="site-info">
 			<div class="copyright">
 				<p>&copy; Reid Compton <?php echo Date('Y');?>. All rights reserved.</p>

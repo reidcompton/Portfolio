@@ -169,3 +169,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+add_filter('images_cpt','my_image_cpt');
+function my_image_cpt(){
+    $cpts = array('photography');
+    return $cpts;
+}
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
