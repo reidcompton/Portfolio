@@ -47,7 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 @import url(https://fonts.googleapis.com/css?family=Arvo);
 html {
 	font-family: 'PT Sans', sans-serif;
@@ -929,8 +929,9 @@ object {
 	display:none;
 }
 
+
 #masthead {
-    background: rgba(44, 44, 44, 0.8) none repeat scroll 0 0;
+    background: none;
     height: 75px;
     left: 0;
     padding: 22px 0;
@@ -938,6 +939,19 @@ object {
     top: 0;
     width: 100%;
     z-index: 100;
+    color: black;
+    /* Firefox */
+    -moz-transition: all 1s ease-in;
+    /* WebKit */
+    -webkit-transition: all 1s ease-in;
+    /* Opera */
+    -o-transition: all 1s ease-in;
+    /* Standard */
+    transition: all 1s ease-in;
+}
+
+.home #masthead {
+	background:rgba(44, 44, 44, 0.8) none repeat scroll 0 0;
 }
 
 #logo { height:32px; }
@@ -1151,9 +1165,9 @@ object {
 }
 
 .site-info {
-    height: 150px;
+    height: 80px;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 25px;
     text-align: center;
     width: 1200px;
 }
@@ -1165,7 +1179,8 @@ object {
 }
 
 .site-info .social {
-	float:right;
+    float: right;
+    margin-top: -5px;
 }
 
 .site-info > p {
@@ -1186,31 +1201,26 @@ object {
 	fill:#fff;
 }
 
+.tagline {
+    padding: 150px 100px 100px;
+    border-bottom:10px solid #fff;
+}
+.page-template-page-index .tagline {
+	border:none;	
+}
+
+.tagline p {
+	margin:0;
+}
+
 /* Overwrite fullpage.js styles */
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
 	background:#fff !important;
 }
 
 /* CODE Page */
-.page-template-page-code #masthead { background:none; }
-.page-template-page-code .tagline {
-	background:url(img/mouse-click.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-
 .page-template-page-code .main-navigation a {
     background: rgba(29,69,103,0.9) none repeat scroll 0 0;
-}
-
-
-.page-template-page-code .tagline {
-    padding: 150px 100px 100px;
-    border-bottom:10px solid #fff;
-}
-
-.page-template-page-code .tagline p {
-	margin:0;
 }
 
 .page-template-page-code .sectionInternalWrapper .wp-post-image {
@@ -1305,11 +1315,11 @@ object {
     float: right;
 }
 
-.site-footer {
+/*.site-footer {
 	position:relative;
-}
+}*/
 
-#showPlus {
+/*#showPlus {
 	position:absolute;
 	top:-100px;
 	right:-12px;
@@ -1319,9 +1329,9 @@ object {
 	border-bottom: 80px solid transparent;
 	border-left: 80px solid #7d7d7d;
 	transform:rotate(45deg);
-}
+}*/
 
-#showPlus > a {
+/*#showPlus > a {
     color: #fff;
     display: block;
     font-size: 52px;
@@ -1330,37 +1340,152 @@ object {
     text-decoration: none;
     top: -39px;
     transform: rotate(-45deg);
-}
+}*/
 
-#colophon.showFooter {
+/*#colophon.showFooter {
 	top:-80px;
-}
+}*/
 
 /* Photography Page */
-.page-template-page-photography #masthead { background:none; }
-.page-template-page-photography .tagline {
-	background:url(img/photo-header.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
+.page-template-page-photography .sectionInternalWrapper {
+	height:447px;
+	position:relative;
 }
 
 .page-template-page-photography .main-navigation a {
     background: rgba(29,69,103,0.9) none repeat scroll 0 0;
 }
 
-
-.page-template-page-photography .tagline {
-    padding: 150px 100px 100px;
-    border-bottom:10px solid #fff;
-}
-
-.page-template-page-photography .tagline p {
-	margin:0;
-}
-
 .followup {
 	text-align:center;
 	width:100%;
 	padding:50px 0;
+	font-family:Arvo;
+	font-size:23px;
+	color:#1d4567;
 }
 
+.portEntry {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index:2;
+}
+
+/*.portEntry:nth-child(2) {
+	left:200px;
+	z-index:1;
+}
+
+.portEntry:nth-child(3) {
+	left:400px;
+	z-index:0;
+}*/
+
+.portEntry .portTitle {
+    bottom: 77px;
+    position: absolute;
+    right: -19px;
+    text-align: left;
+    transform: rotate(-90deg);
+}
+
+.portEntry:nth-child(2) .portTitle {
+    bottom: 130px;
+    right: -73px;
+}
+
+.portEntry:nth-child(3) .portTitle {
+    bottom: 90px;
+    right: 0;
+}
+
+.portNiceName {
+    color: #1b3f5d;
+    float: left;
+    font-family: "PT Sans";
+    font-size: 50px;
+    line-height: 40px;
+    text-align: right;
+    text-transform: lowercase;
+    width: 30%;
+}
+
+.portDescription {
+    float: left;
+    font-family: Arvo;
+    font-size: 19px;
+    margin-left: 30px;
+    margin-top: 40px;
+    width: 60%;
+}
+
+.portMetaBox {
+    margin: 0 auto;
+    width: 70%;
+}
+
+/* Contact */
+.two-col {
+    height: 500px;
+}
+.two-col.left {
+    float: left;
+    width: 500px;
+}
+.two-col.left p {
+    color: #4d4d4f;
+    font-family: Arvo;
+    font-size: 17px;
+    line-height: 20px;
+}
+.two-col.right {
+    float: right;
+    width: 400px;
+}
+.two-col h2 {
+    margin: 0;
+}
+
+#sbi_load {display:none;}
+
+#photoAccordion {
+    margin-top: 21px;
+}
+
+.aim a span {
+	opacity:1 !important;
+}
+
+/*  MENU */
+.menu-main-navigation-container {
+    background: rgba(44, 44, 44, 0.95) none repeat scroll 0 0;
+    display: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1001;
+}
+
+.menu-main-navigation-container.open {
+	display:table;
+}
+
+.menu-main-navigation-container ul {
+    display: table-cell;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.menu-main-navigation-container ul li a {
+    color: #fff;
+    font-family: "PT Sans";
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}

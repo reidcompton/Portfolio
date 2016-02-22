@@ -22,10 +22,14 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.js"></script>
 <script type="text/javascript" src="<?php echo bloginfo('stylesheet_directory');?>/js/functions.js"></script>
 
+<script type="text/javascript" src="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/jquery.accordionImageMenu.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/accordionImageMenu.css" />
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 <div id="fullpage">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'reidcompton' ); ?></a>
@@ -37,8 +41,7 @@
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo 'menu &raquo; <div><span></span><span></span><span></span></div>'; ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				<button class="menu-toggle"><?php echo 'menu &raquo; <div><span></span><span></span><span></span></div>'; ?></button>
 			</nav><!-- #site-navigation -->
 		</div><!-- #headerWrapper -->
 	</header><!-- #masthead -->

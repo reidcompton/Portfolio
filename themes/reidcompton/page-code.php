@@ -8,7 +8,9 @@
  */
 get_header(); 
 
-	echo '<div class="section fp-auto-height tagline">';
+	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+	echo '<div class="section fp-auto-height">';
+	echo '<div class="tagline" style="background-image:url(' . $img[0] . '); background-repeat:no-repeat; background-size:cover;">';
 	if (have_posts()) : while (have_posts()) : the_post();
 	the_content();
 	endwhile; endif;

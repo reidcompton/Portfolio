@@ -8,8 +8,10 @@
  */
 get_header(); 
 
+
+	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 	echo '<div class="section fp-auto-height">';
-	echo '<div class="tagline">';
+	echo '<div class="tagline" style="background-image:url(' . $img[0] . '); background-repeat:no-repeat; background-size:cover;">';
 	if (have_posts()) : while (have_posts()) : the_post();
 	the_content();
 	endwhile; endif;
@@ -20,32 +22,38 @@ get_header();
 $featured_args = array(
         'post_type'     => 'photography',
 		'orderby'       => 'post_date',
-		'order'         => 'DESC',
+		'order'         => 'ASC',
 		'posts_per_page'=> '-1', // overrides posts per page in theme settings
-	);
-
-
-
-	$featured_loop = new WP_Query( $featured_args );
-	if( $featured_loop->have_posts()) : while ($featured_loop->have_posts()) : $featured_loop->the_post();
-
+	); 
 ?>
-		<div class="section">
-			<div class="sectionInternalWrapper">
-				<?php echo the_post_thumbnail('large'); ?>
-				<iframe class="portVideo" width="500" height="253" src="https://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'code_project_video_url', true);?>" frameborder="0" allowfullscreen></iframe>
-				<div class="portInfo">
-					<p class="portTitle"><?php the_title(); ?></p>
-					<p class="portType"><?php echo get_post_meta($post->ID, 'code_project_type_of_project', true);?></p>
-					<p class="portDesc"><?php the_content(); ?></p>
-				</div>
-			</div>
-		</div>	
 
+		<div class="section" id="photoAccordion">
+		<?php //echo do_shortcode("[a_image_menu]"); ?>
+<?php 
+
+
+$featured_loop = new WP_Query( $featured_args );
+	if( $featured_loop->have_posts()) : while ($featured_loop->have_posts()) : $featured_loop->the_post();
+	
+?>
+				<a href="<?php the_permalink(); ?>" class="portEntry">
+					<span class="portImage"><?php echo the_post_thumbnail('large'); ?></span>
+					<span class="portTitle"><?php the_title(); ?></span>
+					<span class="hide hiddenNiceName"><?php echo get_post_meta($post->ID, 'photography_style_type_of_style', true);?></span>
+					<span class="hide hiddenDescription"><?php the_content(); ?></span>
+				</a>
 <?php 
 	// end featured loop
 	endwhile; 
 	endif;
+?>
+			<div class="portMetaBox group">
+				<h2 class="portNiceName"></h2>
+				<p class="portDescription"></p>
+			</div>
+		</div>	
+
+<?php 
 
 	get_sidebar();
 	get_footer();
