@@ -25,6 +25,9 @@
 <script type="text/javascript" src="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/jquery-ui-1.10.3.custom.min.js"></script>
 <script type="text/javascript" src="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/jquery.accordionImageMenu.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/accordionImageMenu.css" />
+
+<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory');?>/js/carousel/tinycarousel.css" type="text/css" media="screen"/>
+<script src="<?php echo bloginfo('stylesheet_directory');?>/js/carousel/jquery.tinycarousel.min.js"></script>
 <?php wp_head(); ?>
 </head>
 

@@ -18,7 +18,7 @@
 		<div class="video-overlay"></div>
 		<div style="position:relative;">
 			<h2 class="tagline">hand&ndash;crafted digital</h2>
-			<a href="#" id="meet-reid">Who's Reid?</a>
+			<a href="about" id="meet-reid">Who's Reid?</a>
 		</div>
 			<div class="extended-tag">
 				<p>Full-stack .NET development, Photography</p>
