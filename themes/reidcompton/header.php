@@ -26,13 +26,29 @@
 <script type="text/javascript" src="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/jquery.accordionImageMenu.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('stylesheet_directory');?>/js/accordian/accordionImageMenu.css" />
 
-<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory');?>/js/carousel/tinycarousel.css" type="text/css" media="screen"/>
 <script src="<?php echo bloginfo('stylesheet_directory');?>/js/carousel/jquery.tinycarousel.min.js"></script>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+<div class="lb-bg hide"></div>
+<div class="lb hide">
+	<a href="#" class="lb-escape">X</a>
+	<div class="lb-mainImage">
+		<a href="#" class="lb-prev">&lsaquo;</a>
+		<img>
+		<a href="#" class="lb-next">&rsaquo;</a>
+	</div>
+	<div class="lb-slider">
+		<a class="buttons prev" href="#">&#60;</a>
+		<div class="viewport">
+			<ul class="overview">
+			</ul>
+		</div>
+		<a class="buttons next" href="#">&#62;</a>
+	</div>
+</div>
 <div id="fullpage">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'reidcompton' ); ?></a>

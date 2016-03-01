@@ -14,7 +14,7 @@ get_header();
 	if (have_posts()) : while (have_posts()) : the_post();
 	the_content();
 	endwhile; endif;
-	echo '</div>';
+	echo '</div></div>';
 
 $featured_args = array(
         'post_type'     => 'code',
@@ -34,12 +34,12 @@ $featured_args = array(
 		<div class="section">
 			<div class="sectionInternalWrapper">
 				<?php echo the_post_thumbnail('large'); ?>
-				<iframe class="portVideo" width="500" height="253" src="https://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'code_project_video_url', true);?>" frameborder="0" allowfullscreen></iframe>
-				<div class="portInfo">
-					<p class="portTitle"><?php the_title(); ?></p>
-					<p class="portType"><?php echo get_post_meta($post->ID, 'code_project_type_of_project', true);?></p>
-					<p class="portDesc"><?php the_content(); ?></p>
-				</div>
+				
+				<a class="portInfo" href="<?php the_permalink();?>">
+					<span class="portTitle"><?php the_title(); ?></span>
+					<span class="portType"><?php echo get_post_meta($post->ID, 'code_project_type_of_project', true);?></span>
+					<span class="portDesc"><?php the_content(); ?></span>
+				</a>
 			</div>
 		</div>	
 
@@ -61,22 +61,41 @@ $other_args = array(
 		'order'         => 'DESC',
 		'posts_per_page'=> '10', // overrides posts per page in theme settings
 	);
-	$other_loop = new WP_Query( $other_args );
+	$other_loop = new WP_Query( $other_args );?>
+	<div id="code-carousel">
+				<a class="buttons prev" href="#">&#60;</a>
+				<div class="viewport">
+					<ul class="overview">
+<?
 		if( $other_loop->have_posts()) : while ($other_loop->have_posts()) : $other_loop->the_post(); 
-?>
-			<div class="other-work-code">
-				<div class="img-wrapper">
-					<?php echo the_post_thumbnail('medium'); ?>
-				</div>
-				<p class="portTitle"><?php the_title(); ?></p>
-				<p class="portType"><?php echo get_post_meta($post->ID, 'code_project_type_of_project', true);?></p>
-			</div>
+		$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+?>		
+			
+						<li>
+							<span class="other-work-code">
+								<span class="img-wrapper">
+									<a href="<? the_permalink();?>" style="background-image:url(<? echo $img[0];?>); background-position:center top; background-size:cover;">
+									</a>
+								</span>
+								<a href="<? the_permalink();?>">
+									<span class="portTitle"><?php the_title(); ?></span>
+								</a>
+								<a href="<? the_permalink();?>">
+									<span class="portType"><?php echo get_post_meta($post->ID, 'code_project_type_of_project', true);?></span>
+								</a>
+							</span>
+						</li>
 
 <?php
 	// end other loop
 	endwhile; 
 	endif; 
 ?>
+		
+					</ul>
+				</div>
+				<a class="buttons next" href="#">&#62;</a>
+			</div>
 		</div> <!-- .other-work -->
 	</div> <!-- #section -->
 <?php

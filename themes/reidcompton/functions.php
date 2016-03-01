@@ -173,8 +173,39 @@ require get_template_directory() . '/inc/jetpack.php';
 
 add_filter('images_cpt','my_image_cpt');
 function my_image_cpt(){
-    $cpts = array('photography');
+    $cpts = array('photography', 'code');
     return $cpts;
+}
+
+add_filter('list_images','my_list_images');
+function my_list_images(){
+    //I only need two pictures
+    $picts = array(
+        'image1' => '_image1',
+        'image2' => '_image2',
+        'image3' => '_image3',
+        'image4' => '_image4',
+        'image5' => '_image5',
+        'image6' => '_image6',
+        'image7' => '_image7',
+        'image8' => '_image8',
+        'image9' => '_image9',
+        'image10' => '_image10',
+        'image11' => '_image11',
+        'image12' => '_image12',
+        'image13' => '_image13',
+        'image14' => '_image14',
+        'image15' => '_image15',
+        'image16' => '_image16',
+        'image17' => '_image17',
+        'image18' => '_image18',
+        'image19' => '_image19',
+        'image20' => '_image20',
+        'image21' => '_image21',
+        'image22' => '_image22',
+        'image23' => '_image23',
+    );
+    return $picts;
 }
 
 remove_filter( 'the_content', 'wpautop' );

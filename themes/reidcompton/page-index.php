@@ -46,7 +46,7 @@
 						<h2>photography</h2>
 						<!-- <hr class="underline"> -->
 						<!-- <p>In accumsan fringilla cursus. Donec consequat pretium sem bibendum iaculis. </p> -->
-						<a href="#" class="samples">Samples</a>
+						<a href="photography" class="samples">Samples</a>
 					</div>
 				</div>
 			</div>
