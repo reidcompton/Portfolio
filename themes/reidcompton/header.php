@@ -49,7 +49,11 @@
 		<a class="buttons next" href="#">&#62;</a>
 	</div>
 </div>
+<? if (is_single()) { ?>
+<div>
+<? } else { ?>
 <div id="fullpage">
+<? } ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'reidcompton' ); ?></a>
 

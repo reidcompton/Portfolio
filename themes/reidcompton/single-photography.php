@@ -18,9 +18,9 @@
 	foreach($images as $image) {
 		array_push($imgArray, $image[0]);
 		if ($i==0) {
-			echo "<div class='section' id='photos" . $i . "'><div class='photos'>";
+			echo "<div class='section group' id='photos" . $i . "'><div class='photos group'>";
 		} else if ($i==3 || $i==7 || $i==10 || $i == 15 || $i == 18) {
-			echo "</div></div><div class='section' id='photos" . $i . "'><div class='photos'>";
+			echo "</div></div><div class='section group' id='photos" . $i . "'><div class='photos group'>";
 			if ($i == 3)
 				the_content();
 		} 

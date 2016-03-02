@@ -18,6 +18,14 @@ $(document).ready(function() {
     })();
 
     function bindEvents() {
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 0) {
+                $('#masthead').css('background','rgba(44, 44, 44, 0.8)');
+            } else {
+                $('#masthead').css('background','');
+            }
+        });
+
         $('.port-lb').off('click').on('click', function(e) {
             e.preventDefault();
             openLightbox(this);
@@ -47,15 +55,28 @@ $(document).ready(function() {
         $('.lb-prev, .lb-next').off('click').on('click', function(e){
             e.preventDefault();
             if($(this).hasClass('lb-prev')) {
-                var prevUrl = $('.lb-slider .selected').first().removeClass('selected').prev().addClass('selected').find('a').attr('data-url');
+                var prevUrl;
+                if (!$('.lb-slider .selected').first().is(':first-child')) {
+                    prevUrl = $('.lb-slider .selected').first().removeClass('selected').prev().addClass('selected').find('a').attr('data-url');
+                } else {
+                    $('.lb-slider li').removeClass('selected');
+                    prevUrl = $('.lb-slider li:last-child').addClass('selected').find('a').attr('data-url');
+                }
                 $('.lb-mainImage img').attr('src', prevUrl);
             } else {
-                var nextUrl = $('.lb-slider .selected').first()
+                var nextUrl;
+                if (!$('.lb-slider .selected').first().is(':last-child')) {
+                    nextUrl = $('.lb-slider .selected').first()
                                 .removeClass('selected')
                                 .next()
                                 .addClass('selected')
                                 .find('a')
                                 .attr('data-url');
+                    } else {
+                        $('.lb-slider li').removeClass('selected');
+                        nextUrl = $('.lb-slider li:first-child').addClass('selected').find('a').attr('data-url');
+                    }
+
                 $('.lb-mainImage img').attr('src', nextUrl);
             }
         });

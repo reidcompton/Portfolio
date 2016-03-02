@@ -938,7 +938,7 @@ object {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1002;
     color: black;
     /* Firefox */
     -moz-transition: all 1s ease-in;
@@ -1292,6 +1292,10 @@ object {
     margin-top: 16px;
 }
 
+.other-work .portType {
+	font-size:16px;
+}
+
 .sectionInternalWrapper {
 	width:1000px;
 	margin:0 auto;
@@ -1311,27 +1315,27 @@ object {
 }
 
 .portTitle {
-	display:block;
-	font-size:31px;
-	line-height:31px;
-	font-weight:bold;
-	color:#fff;
-	text-transform: uppercase;
+    color: #fff;
+    display: block;
+    font-size: 71px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .portType {
-	display:block;
-	font-size:16px;
-	font-weight:bold;
-	color:#70a142;
-	text-transform: uppercase;
+    color: #70a142;
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .portDesc {
-	display:block;
-	font-family:Arvo;
-	font-size:14px;
-	color:#fff;
+    color: #fff;
+    display: block;
+    font-family: Arvo;
+    font-size: 17px;
+    margin-top: 30px;
 }
 
 .other-work-code a {
@@ -1482,6 +1486,7 @@ object {
     right: -19px;
     text-align: left;
     transform: rotate(-90deg);
+    font-size:36px;
 }
 
 .portEntry:nth-child(2) .portTitle {
@@ -1562,10 +1567,10 @@ object {
     height: 100%;
     margin: 0;
     padding: 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 100%;
-    z-index: 1001;
+    z-index: 1004;
 }
 
 .menu-main-navigation-container.open {
@@ -1861,7 +1866,7 @@ object {
 
 .photos {
 	width:1024px;
-	margin:0 auto;
+	margin:30px auto;
 }
 
 #photos0 a:first-child,
@@ -1975,7 +1980,7 @@ object {
     position: fixed;
     top: 5%;
     width: 90%;
-    z-index: 1001;
+    z-index: 1003;
 }
 
 .lb-bg {
@@ -2095,3 +2100,34 @@ object {
     height: 100%;
     width: 100%;
 }
+
+.single-code-main {
+    margin: 0 auto;
+    position: relative;
+    width: 1024px;
+}
+
+.single-code-main .two-col.left {
+    float: left;
+    width: 350px;
+}
+.single-code-main .two-col {
+    margin-top: 60px;
+}
+
+.single-code-main .port-lb {
+    display: block;
+    height: 600px;
+    margin-bottom: 60px;
+    width: 600px;
+}
+
+.single-code-main .two-col.right {
+    float: right;
+    width: 600px;
+}
+
+.single-code-main .two-col.left {
+    position: fixed;
+}
+
