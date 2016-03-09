@@ -95,7 +95,8 @@ template {
 }
 
 a {
-	background-color: transparent;
+    color: royalblue;
+    text-decoration: none;
 }
 
 a:active,
@@ -954,7 +955,7 @@ object {
 	background:rgba(44, 44, 44, 0.8) none repeat scroll 0 0;
 }
 
-#logo { height:32px; }
+#logo { height:32px; padding-left:10px; }
 
 .site-branding {
     height: auto;
@@ -1006,13 +1007,19 @@ object {
 
 /* Welcome */
 #welcome {
-	background:#f00;
 	text-align:center;
 }
 .tagline { 
 	font-size:65px;
 	color:#fff;
 	text-align:center;
+}
+.home .tagline {
+    margin: 0 0 42px;
+    padding: 0;
+}
+.tagline-home-wrapper {
+	position:relative;
 }
 .tag { color:#6a9a44; }
 #meet-reid {
@@ -1062,7 +1069,7 @@ object {
 
 /* Code */
 #code {
-    background: #ff0 none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("img/code.jpg") no-repeat right bottom / cover;
     float: left;
     height: 100%;
     width: 50%;
@@ -1167,9 +1174,9 @@ object {
 .site-info {
     height: 80px;
     margin: 0 auto;
-    padding-top: 25px;
+    padding:25px 10px;
     text-align: center;
-    width: 1200px;
+    width: 100%;
 }
 
 .site-info .copyright {
@@ -1266,7 +1273,7 @@ object {
 }
 
 .other-work {
-	width:1000px;
+	width:auto;
 	margin:0 auto;
 	text-align: center;
 }
@@ -1348,7 +1355,7 @@ object {
 /* Tiny Carousel */
 #code-carousel {
     height: 1%;
-    margin: 30px 0 0;
+    margin: 30px auto;
     overflow: hidden;
     position: relative;
     padding: 0 50px 10px;
@@ -1507,7 +1514,7 @@ object {
     line-height: 40px;
     text-align: right;
     text-transform: lowercase;
-    width: 30%;
+    width: 300px;
 }
 
 .portDescription {
@@ -1516,12 +1523,12 @@ object {
     font-size: 19px;
     margin-left: 30px;
     margin-top: 40px;
-    width: 60%;
+    width: 660px;
 }
 
 .portMetaBox {
-    margin: 0 auto;
-    width: 70%;
+    margin: 65px auto 95px;
+    width: 1024px;
 }
 
 /* Contact */
@@ -1619,11 +1626,12 @@ object {
     resize: none;
 }
 
-.wpcf7-form-control-wrap textarea,
-.wpcf7-form-control-wrap input {
-	color:#1d4567 !important;
-	border:1px solid #1d4567;
-	border-radius:0;
+.wpcf7-form-control-wrap textarea, .wpcf7-form-control-wrap input {
+    background: #e5e5e5 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    color: #1d4567 !important;
+    width: 100%;
 }
 .wpcf7-form-control.wpcf7-submit {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -1650,6 +1658,11 @@ object {
     top: 2px;
 }
 
+.contact {
+    margin: 120px auto 60px;
+    width: 1024px;
+}
+
 .instagram-name {
     border: 1px solid #71a241;
     color: #71a241;
@@ -1670,9 +1683,9 @@ object {
 .page-id-25 .two-col.left {
 	margin-right:200px;
 }
-.page-id-25 .resume {
-	width:1000px;
-	margin:0 auto;
+.resume {
+    margin: 66px auto 92px;
+    width: 1024px;
 }
 
 .page-id-25 h2 {
@@ -1680,7 +1693,7 @@ object {
     font-family: "PT Sans";
     font-size: 46px;
     font-weight: normal;
-    margin-top: 0;
+    margin: 0 0 60px;
     text-align: center;
 }
 
@@ -1837,8 +1850,12 @@ object {
 }
 
 .client-logos {
-    margin: 0 auto;
-    width: 1000px;
+    margin: 83px auto 110px;
+    width: 1024px;
+}
+
+.client-logos > h3 {
+    margin: 0 0 66px;
 }
 
 #slider1 .buttons {
@@ -2129,5 +2146,194 @@ object {
 
 .single-code-main .two-col.left {
     position: fixed;
+}
+
+@media (max-width: 1023px), (max-device-width: 1023px) {
+	#logo {
+	    height: 18px;
+	    margin-left: 10px;
+	    margin-top: 7px;
+	}
+	.extended-tag {
+	    font-size: 17px;
+	    text-align: center;
+	}
+	img {
+		max-height:100%;
+		max-width:none;
+	}
+	#code {
+	    height: 50%;
+	    width: 100%;
+	}
+	.descriptor .info .info-text {
+	    width: 100%;
+	}
+	#photo {
+	    height: 50%;
+	    width: 100%;
+	}
+	.tagline {
+	    font-size: 40px;
+	    padding: 85px 30px;
+	}
+	.page-id-25 .resume .two-col,
+	.page-id-25 .experience .two-col {
+	    margin-left: 12px;
+	    width: 310px;
+	    float:none;
+	}
+	#about-carousel {
+	    width: 340px;
+	}
+	.page-id-25 h3 {
+	    margin-left: 15px;
+	    text-align: center;
+	    width: 300px;
+	}
+	.sectionInternalWrapper {
+	    margin-top: 10px;
+	    overflow: hidden;
+	    padding: 20px 0;
+	    position: relative;
+	    width: 100%;
+	}
+	.portTitle {
+	    font-size: 45px;
+	}
+	#code-carousel {
+	    width: 100%;
+	}
+	.other-work .portTitle {
+	    width: 100%;
+	}
+	.portType {
+	    width: 100%;
+	}
+	.tagline-filter {
+	    height: 240px;
+	}
+	.tagline-bg {
+		height:245px;
+		top:-5px;
+	}
+	#photos3 .sectionAbout {
+	    margin: 10px auto;
+	    padding: 20px 0;
+	    width: 300px;
+	    height:auto;
+	}
+	.port-lb {
+	    clear: both !important;
+	    display: block;
+	    float: none !important;
+	    height: 300px !important;
+	    margin-top: 10px;
+	    width: 300px !important;
+	}
+	.photos {
+	    width: 300px;
+	    margin:0 auto;
+	}
+	.photos a {
+	    margin-top: 10px !important;
+	}
+	.lb-mainImage > img {
+		margin-top: 40%;
+		width: 70%;
+		height:auto;
+	}
+	.page-id-72 .two-col {
+	    clear: both;
+	    float: none;
+	    width: 300px;
+	}
+	.resume, .experience > div,
+	.client-logos,
+	#about-carousel,
+	.site-info {
+		width:auto;
+	}
+	.single-photography #colophon {
+		margin-top:10px;
+	}
+	.page-id-25 .resume .two-col, .page-id-25 .experience .two-col,
+	.page-id-25 h3 {
+		width:90%;
+		margin-left:3px;
+	}
+	.page-template-page-code .other-work-code .img-wrapper {
+		width:305px;
+	}
+	#code-carousel .next {
+		right:10px;
+	}
+	.single-code-main {
+	    margin: 0 auto;
+	    width: 300px;
+	}
+	.single-code-main .two-col.left {
+	    margin-top: 0;
+	    width: 300px;
+	    position:static;
+	    float:none;
+	}
+	.single-code-main .two-col.right {
+	    float: none;
+	    margin-top: 20px;
+	    width: 300px;
+	}
+	.lb-slider .viewport {
+	    height: 80px;
+	}
+	.lb-slider .buttons {
+		top:20% !important;
+	}	
+	.portMetaBox { display:none; }
+	.contact {
+	    margin: 20px auto;
+	    width: 300px;
+	}
+	.page-id-72 .two-col.right {
+	    margin-top: 50px;
+	}
+	.tagline-home-wrapper {
+		margin-top:30%;
+	}
+	#intro-video {
+	    height: 100%;
+	    top: 0;
+	}
+	#welcome {
+	    height: 480px;
+	}
+	#code, #photo {position:relative;}
+	#code .descriptor,
+	#photo .descriptor {
+		padding:50px 0;
+	}
+	.extended-tag {
+	    background: #565656 none repeat scroll 0 0;
+	    color: #fff;
+	    font-size: 23px;
+	    height: 77px;
+	    margin-top: 40px;
+	    padding-top: 20px;
+	    position: relative;
+	    text-align: center;
+	    width: 100%;
+	}
+	#welcome {
+	    height: 100%;
+	    width:100%;
+	}
+	.extended-tag > p {
+	    font-size: 18px;
+	    line-height: 1em;
+	}
+	.other-work-code {
+	    margin-right: 0 !important;
+	    width: 280px;
+	}
 }
 

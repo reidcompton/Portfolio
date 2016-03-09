@@ -49,10 +49,10 @@
 		<a class="buttons next" href="#">&#62;</a>
 	</div>
 </div>
-<? if (is_single()) { ?>
-<div>
-<? } else { ?>
+<? if ((is_page('home') || is_page(11)) && !is_iphone()) { ?>
 <div id="fullpage">
+<? } else { ?>
+<div>
 <? } ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'reidcompton' ); ?></a>

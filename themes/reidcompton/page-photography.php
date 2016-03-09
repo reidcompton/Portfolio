@@ -10,7 +10,7 @@ get_header();
 
 
 	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-	echo '<div class="section fp-auto-height">';
+	echo '<div>';
 	echo '<div class="tagline" style="background-image:url(' . $img[0] . '); background-repeat:no-repeat; background-size:cover;">';
 	if (have_posts()) : while (have_posts()) : the_post();
 	the_content();
@@ -27,7 +27,7 @@ $featured_args = array(
 	); 
 ?>
 
-		<div class="section" id="photoAccordion">
+		<div id="photoAccordion">
 		<?php //echo do_shortcode("[a_image_menu]"); ?>
 <?php 
 
@@ -47,11 +47,11 @@ $featured_loop = new WP_Query( $featured_args );
 	endwhile; 
 	endif;
 ?>
-			<div class="portMetaBox group">
-				<h2 class="portNiceName"></h2>
-				<p class="portDescription"></p>
-			</div>
 		</div>	
+		<div class="portMetaBox group">
+			<h2 class="portNiceName"></h2>
+			<p class="portDescription"></p>
+		</div>
 
 <?php 
 

@@ -8,15 +8,16 @@
  */
 
 	get_header(); 
-?>
+
 	// if (have_posts()) : while (have_posts()) : the_post();
 	// 	the_content();
 	// endwhile; endif;
+	?>
 	<div class="section" id="welcome">
 
 		<img id="intro-video" src="<?php echo bloginfo('stylesheet_directory');?>/img/train.jpg">
 		<div class="video-overlay"></div>
-		<div style="position:relative;">
+		<div class="tagline-home-wrapper">
 			<h2 class="tagline">hand&ndash;crafted digital</h2>
 			<a href="about" id="meet-reid">Who's Reid?</a>
 		</div>

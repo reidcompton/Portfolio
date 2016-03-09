@@ -210,3 +210,16 @@ function my_list_images(){
 
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
+
+function is_ipad() {
+	$is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
+	if ($is_ipad)
+		return true;
+	else return false;
+}
+function is_iphone() {
+	$cn_is_iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPhone');
+	if ($cn_is_iphone)
+		return true;
+	else return false;
+}

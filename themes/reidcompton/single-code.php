@@ -4,9 +4,9 @@
 
 	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-		<div class="section fp-auto-height">
+		<div>
 			<div class="tagline-filter"></div>
-			<div class="tagline-bg" style="background-image:url(<? echo $img[0] ?>); background-repeat:no-repeat; background-size:100%; background-position:center;"></div>
+			<div class="tagline-bg" style="background-image:url(<? echo $img[0] ?>); background-repeat: no-repeat; background-position: center top; background-size: cover;"></div>
 			<p class="tagline"><?php the_title(); ?></p>
 		</div>
 <?

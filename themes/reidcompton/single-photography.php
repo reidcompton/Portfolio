@@ -4,9 +4,9 @@
 
 	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-		<div class="section fp-auto-height">
+		<div>
 			<div class="tagline-filter"></div>
-			<div class="tagline-bg" style="background-image:url(<? echo $img[0] ?>); background-repeat:no-repeat; background-size:100%; background-position:center;"></div>
+			<div class="tagline-bg" style="background-image:url(<? echo $img[0] ?>); background-repeat:no-repeat; background-size:cover; background-position:center top;"></div>
 			<p class="tagline"><?php echo get_post_meta($post->ID, 'photography_style_type_of_style', true);?></p>
 		</div>
 <?
@@ -18,9 +18,9 @@
 	foreach($images as $image) {
 		array_push($imgArray, $image[0]);
 		if ($i==0) {
-			echo "<div class='section group' id='photos" . $i . "'><div class='photos group'>";
+			echo "<div class='group' id='photos" . $i . "'><div class='photos group'>";
 		} else if ($i==3 || $i==7 || $i==10 || $i == 15 || $i == 18) {
-			echo "</div></div><div class='section group' id='photos" . $i . "'><div class='photos group'>";
+			echo "</div></div><div class='group' id='photos" . $i . "'><div class='photos group'>";
 			if ($i == 3)
 				the_content();
 		} 
