@@ -16,7 +16,7 @@ get_header();
 	the_content();
 	endwhile; endif;
 	echo '</div>';
-	echo '<div class="followup"><p>Sed facilisis lectus ligula, sed placerat mi pretium sit amet.</p></div>';
+	echo '<div class="followup"><p><em>In photography, the smallest thing can be a great subject.<br> The little, human detail can become a Leitmotiv.</em><br>&ndash; Henri Cartier-Bresson</p></div>';
 	echo '</div>';
 
 $featured_args = array(

@@ -1090,6 +1090,20 @@ object {
 	border:2px solid #1d4567;
 }
 
+.descriptor .info .info-text.hover {
+	transform:scale(1.2);
+}
+
+#code .descriptor .info .info-text a:hover {
+	background:#1d4567;
+	color:#fff;
+}
+
+#photo .descriptor .info .info-text a:hover {
+	color:#fff;
+	background:#71a133;
+}
+
 .descriptor {
     background: rgba(29, 69, 103, 0.9) none repeat scroll 0 0;
     display: table;
@@ -1109,6 +1123,7 @@ object {
     margin: 0 auto;
     position: relative;
     width: 60%;
+	transition:all 0.2s linear;
 }
 
 .descriptor .info .info-text h2 {
@@ -1209,7 +1224,9 @@ object {
 }
 
 .tagline {
+    background-position: center center;
     border-bottom: 10px solid #fff;
+    filter: grayscale(100%) contrast(120%);
     padding: 150px 100px 100px;
     position: relative;
     z-index: 1001;
@@ -1231,10 +1248,11 @@ object {
 }
 
 .tagline-bg {
-	height: 348px;
-	position: absolute;
-	width: 100%;
-	z-index: 1000;
+    filter: grayscale(100%) contrast(120%);
+    height: 348px;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
 }
 
 .tagline p {
@@ -1273,7 +1291,7 @@ object {
 }
 
 .other-work {
-	width:auto;
+	width:80%;
 	margin:0 auto;
 	text-align: center;
 }
@@ -1284,6 +1302,7 @@ object {
 .other-work-code {
     display: block;
     float: left;
+    margin-bottom:30px;
     width: 315px;
 }
 
@@ -1324,9 +1343,10 @@ object {
 .portTitle {
     color: #fff;
     display: block;
-    font-size: 71px;
+    font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
+    line-height:40px;
 }
 
 .portType {
@@ -1498,12 +1518,12 @@ object {
 
 .portEntry:nth-child(2) .portTitle {
     bottom: 130px;
-    right: -73px;
+    right: -80px;
 }
 
 .portEntry:nth-child(3) .portTitle {
     bottom: 90px;
-    right: 0;
+    right: -32px;
 }
 
 .portNiceName {
@@ -1561,6 +1581,7 @@ object {
 
 #photoAccordion {
     margin-top: 21px;
+    width:100% !important;
 }
 
 .aim a span {
@@ -1732,7 +1753,7 @@ object {
 	left:0;
 	display:block;
 }
-
+/*
 .page-id-25 .resume .two-col span.skillLevel .high {
 	width:282px;
 }
@@ -1740,7 +1761,7 @@ object {
 .page-id-25 .resume .two-col span.skillLevel .intermediate {
 	width:211px;
 }
-
+*/
 /* Tiny Carousel */
 #about-carousel {
     height: 1%;
@@ -2145,6 +2166,9 @@ object {
 }
 
 .single-code-main .two-col.left {
+    border-bottom: 3px solid #71a133;
+    border-top: 3px solid #71a133;
+    padding: 20px 10px;
     position: fixed;
 }
 
@@ -2326,6 +2350,8 @@ object {
 	#welcome {
 	    height: 100%;
 	    width:100%;
+	    overflow:hidden;
+	    position:relative;
 	}
 	.extended-tag > p {
 	    font-size: 18px;
@@ -2334,6 +2360,9 @@ object {
 	.other-work-code {
 	    margin-right: 0 !important;
 	    width: 280px;
+	}
+	.portEntry:nth-child(3) .portTitle {
+		right:-50px;
 	}
 }
 

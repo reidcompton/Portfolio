@@ -6,7 +6,7 @@
 ?>
 		<div>
 			<div class="tagline-filter"></div>
-			<div class="tagline-bg" style="background-image:url(<? echo $img[0] ?>); background-repeat:no-repeat; background-size:cover; background-position:center top;"></div>
+			<div class="tagline-bg" style="background-image:url(<? echo $img[0] ?>); background-repeat:no-repeat; background-size:cover; background-position:center;"></div>
 			<p class="tagline"><?php echo get_post_meta($post->ID, 'photography_style_type_of_style', true);?></p>
 		</div>
 <?

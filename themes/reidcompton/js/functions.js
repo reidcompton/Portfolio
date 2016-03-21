@@ -21,11 +21,17 @@ $(document).ready(function() {
         $(window).scroll(function(){
             if ($(this).scrollTop() > 0) {
                 $('#masthead').css('background','rgba(44, 44, 44, 0.8)');
+                if($('body').hasClass('page-id-25')) 
+                    animateSkills();
             } else {
                 $('#masthead').css('background','');
             }
         });
-
+        $('.samples').hover(function(){
+            $(this).parent().addClass('hover');
+        }, function(){
+            $(this).parent().removeClass('hover');
+        });
         $('.port-lb').off('click').on('click', function(e) {
             e.preventDefault();
             openLightbox(this);
@@ -98,6 +104,14 @@ $(document).ready(function() {
         });
     }
 
+    function animateSkills() {
+        $('.skill').each(function(e, i){
+            var level = $(this).children('.skillLevel').children('span').attr('class'),
+                width = level == 'high' ? '282px' : '211px';
+            $(this).children('.skillLevel').children('span').animate({ 'width' : width }, 1000);
+        });
+    }
+
     if($('body').hasClass('page-template-page-photography')) {
         // run it once first
         rotatePhotographyPortfolio($('.portEntry:first'));
@@ -149,11 +163,11 @@ $(document).ready(function() {
 		 'duration': 400,
 		 'openItem': 0,
 		 'position':'horizontal',
-		 'fadeInTitle': false
+		 'fadeInTitle': false,
+         'color':'#ffffff'
     });
 
     $('#about-carousel').tinycarousel();
-    $('#code-carousel').tinycarousel();
 
 
 });
